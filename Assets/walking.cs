@@ -7,12 +7,12 @@ public class Walker : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] float moveSpeed = 0.01f;
 
-    // Animator animator;
+    Animator animator;
 
-    // private void Awake() {
-    //     animator = GetComponent<Animator>();
+    private void Awake() {
+        animator = GetComponent<Animator>();
 
-    // }
+    }
 
     void Start()
     {
@@ -38,9 +38,11 @@ public class Walker : MonoBehaviour
             Debug.Log("Fire? " + fire1);
         }
         
-        // animator.SetBool("IsWalkingUp", vertical > 0);
-        // animator.SetBool("IsWalkingDown", vertical < 0);
+        animator.SetBool("IsWalkingUp", vertical > 0);
+        animator.SetBool("IsWalkingDown", vertical < 0);
 
+        animator.SetBool("IsWalkingLeft", horizontal > 0);
+        animator.SetBool("IsWalkingRight", horizontal< 0);
 
     }
 }
